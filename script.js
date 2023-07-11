@@ -31,17 +31,14 @@ console.log(popFront([0, 5, 10, 15]))
 //  INSERT AT
 
 function InsertAt(arr, i, x) {
-    const newArray = newArray(arr.length + 1);
-    for (i = 0; i < arr.length - 1; i++) {
-        newArray[i] = arr[i]
-        newArray[i] = x;
+    for (let j = arr.length; j >= i; j--) {
+        arr[j] = arr[j - 1]
     }
-    for (let i = i + 1; i < newArray.length; i++) {
-        newArray[i] = arr[i - 1]
-    }
-    return newArray
+    arr[i] = x
+    return arr
 }
 
-console.log(InsertAt([1, 2], 22, 1))
+console.log(InsertAt([100, 200, 5], 2, 311))
+console.log(InsertAt([9, 33, 7], 1, 7))
 
 
