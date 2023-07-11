@@ -11,23 +11,20 @@ function PushFront(arr) {
 console.log(arr);
 
 
+
 // POP FRONT
 
-Array.prototype.removeItem = function (item) {
-    for (i = 0; i < this.length; i++) {
-        if (this[i] === item) {
-            for (var j = i; j < this.length - 1; j++) {
-                this[j] = this[j + 1];
-            }
-            this.length = this.length - 1
-            return;
-        }
+function popFront(arr) {
+    let temp = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i + 1]
     }
+    arr.length = arr.length - 1
+    console.log(arr)
+    return temp
 }
-
-var items = ['a', 'b', 'c', 'd'];
-items.removeItem('d');
-console.log(items);
+console.log(popFront([3, 5, 6, 9]))
+console.log(popFront([0, 5, 10, 15]))
 
 
 
